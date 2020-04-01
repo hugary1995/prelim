@@ -1,0 +1,84 @@
+\subsection{Towards ductile fracture}
+
+\subsectioncover
+
+\begin{frame}{}
+The free energy takes the following form
+\begin{align}
+    \pi(\defgrad, \defgrad^p, \plasticstrain, d, \grad d) = \pi_\elastic(\defgrad, \defgrad^p, d) + \pi_\plastic(\plasticstrain, d) + \pi_\fracture(d, \grad d).
+\end{align} \\
+The elastic energy is defined as
+\begin{subequations}
+\begin{align}
+    \pi_\elastic(\defgrad, \defgrad^p, d) &= g^e(d) \pi_\elastic^\activeenergy(\defgrad, \defgrad^p) + \pi_\elastic^\inactiveenergy(\defgrad), \\
+    \pi_\elastic^\activeenergy(\defgrad, \defgrad^p) &= H(J-1) \left[ \dfrac{1}{2} K_s \left( \dfrac{1}{2} (J^2-1) - \ln{J} \right) \right] + \dfrac{1}{2} \mu_s \left( \overbar{\bs{C}} : {\bs{C}^p}^{-1} - 3 \right), \\
+    \pi_\elastic^\inactiveenergy(\defgrad) &= H(1-J) \left[ \dfrac{1}{2} K_s \left( \dfrac{1}{2} (J^2-1) - \ln{J} \right) \right].
+\end{align}
+\end{subequations} \\
+The plastic energy is defined as
+\begin{align}
+    \pi_\plastic(\plasticstrain) &= g^p(d) \sigma_Y \plasticstrain + g^h(d) \dfrac{1}{2} h \plasticstrain^2.
+\end{align}
+\end{frame}
+
+\begin{frame}{}
+\vspace{-1em}
+Balance laws and constitutive equations:
+\begin{align}
+    \divergence \bs{P} + \rho_0 \bs{B} &= \bs{0}, \\
+    - \divergence \pi_{, \grad d} + \textcolor{dukeroyal}{\pi_{, d}} &\geqslant 0, \quad \dot{d} \geqslant 0, \\
+    \rho_0 r - \pi_{, \plasticstrain} \dot{\plasticstrain} - \pi_{, d} \dot{d} &= \rho_0 c \dot{T},
+\end{align} \\
+The constitutive relation between the Kirchhoff stress and the deformation gradient is
+\begin{subequations}
+\begin{align}
+    & \bs{\tau} = \textcolor{dukeroyal}{g^e(d)}\bs{\tau}^\activeenergy + \bs{\tau}^\inactiveenergy, \\
+    & \bs{\tau}^\activeenergy = \dfrac{1}{2} H(J-1) K_s (J^2-1) \bs{I} + \mu_s \dev(\bs{b}^e), \\
+    & \bs{\tau}^\inactiveenergy = \dfrac{1}{2} H(1-J) K_s (J^2-1) \bs{I}.
+\end{align}
+\end{subequations} \\
+The Kuhn-Tucker loading/unloading conditions are
+\begin{align}
+    & \phi(\bs{N}^p, \plasticstrain, d) = \norm{\dev(\bs{\tau})} - \sqrt{\dfrac{2}{3}} \left[ \textcolor{dukeroyal}{g^p(d)} \sigma_Y + \textcolor{dukeroyal}{g^h(d)} h \plasticstrain \right] \leqslant 0, \quad \dot{\plasticstrain} \geqslant 0, \quad \dot{\plasticstrain}\phi(\bs{N}^p, \plasticstrain, d) = 0,
+\end{align} \\
+and the flow rule is \\
+\begin{align}
+    & \dot{\defgrad}^p {\defgrad^p}^{-1} = \dot{\plasticstrain} \bs{N}^p, \quad \bs{N}^p = \sqrt{\dfrac{3}{2}} \dfrac{\dev(\bs{\tau})}{\norm{\dev(\bs{\tau})}}, \quad \det(\defgrad^p) = 1.
+\end{align}
+\end{frame}
+
+\begin{frame}{}
+\contenttitle{Unperturbed elastic-plastic behavior} \\
+\input{prelim/figures/compare_w}
+\end{frame}
+
+\begin{frame}{}
+\contenttitle{Regularization length-insensitive fracture strength} \\
+\input{prelim/figures/compare_l}
+\end{frame}
+
+\begin{frame}{}
+Following Alessi et. el. they are four representative stages.
+\begin{itemize}
+  \item E: elastic loading
+  \item D: damage softening
+  \item P: plastic hardening
+  \item PD: mix of plastic hardening and damage softening
+\end{itemize}
+\input{prelim/figures/compare_cases}
+\end{frame}
+
+\begin{frame}{}
+The shapes of the degradation functions (in particular, their derivatives) determine the amount of plastic dissipation during the damage softening process. \textcolor{dukeroyal}{The E-D process may be viewed as a limiting case of the E-D-PD process.} Similarly, the E-P-D process may be viewed as a limiting case of the E-P-PD process.
+\input{prelim/figures/E_D_E_D_PD}
+\end{frame}
+
+\begin{frame}{}
+The shapes of the degradation functions (in particular, their derivatives) determine the amount of plastic dissipation during the damage softening process. The E-D process may be viewed as a limiting case of the E-D-PD process. \textcolor{dukeroyal}{Similarly, the E-P-D process may be viewed as a limiting case of the E-P-PD process.}
+\input{prelim/figures/E_P_D_E_P_PD}
+\end{frame}
+
+\begin{frame}{}
+Dugdale's model and Barenblatt's model lead to different crack paths in a three-point bending problem.
+\input{prelim/figures/3pb}
+\end{frame}

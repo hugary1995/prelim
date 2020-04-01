@@ -1,0 +1,150 @@
+\subsection{Soil Desiccation}
+
+\subsectioncover
+
+\begin{frame}{}
+\vspace{-1.5em}
+\begin{columns}
+    \begin{column}{0.3\textwidth}
+        \begin{figure}[htb!]
+            \centering
+            \begin{subfigure}[b]{\textwidth}
+                \centering
+                \includegraphics[width=0.8\textwidth]{past/figures/1D_schematic.png}
+                \caption{}
+            \end{subfigure}
+
+            \begin{subfigure}[b]{\textwidth}
+                \centering
+                \includegraphics[width=0.5\textwidth]{past/figures/2D_schematic.png}
+                \caption{}
+            \end{subfigure}
+
+            \begin{subfigure}[b]{\textwidth}
+                \centering
+                \includegraphics[width=0.6\textwidth]{past/figures/3D_schematic.png}
+                \caption{}
+            \end{subfigure}
+        \end{figure}
+    \end{column}
+    \begin{column}{0.7\textwidth}
+        \begin{itemize}
+            \item Only ``channeling'' cracks in the thin film are considered.
+            \item Small deformation is assumed for $\pi_\elastic$, and $\strain = (\grad \bs{u} + \grad^T \bs{u})/2$.
+            \item \textcolor<5>{dukeroyal}{A frictionless contact split of the elastic energy is applied at the vicinity of the crack set.}
+            \item Thermal effects are neglected. Dehydration is modeled as pre-stress in $\pi_\inelastic = \sigma_0 \tr(\strain)$.
+            \item A cohesive-type fracture model is used for $\pi_\fracture$.
+            \pause
+            \item The model is verified with analytical solutions in a periodic quasi-1D context (Fig.~a).
+            \pause
+            \item Pervasive fracture is studied with a 2D simplification (Fig.~b).
+            \item The energy $\pi_\interface$ accounts for mismatch between the film and the substrate.
+            \item \textcolor<5>{dukeroyal}{Material property inhomogeneity in the macroscopic continuum model is taken into account by introducing two pointwise correlated random fields $\{\Gc(\bs{X}), \bs{X} \in \body\}$ and $\{\pi_c(\bs{X}), \bs{X} \in \body\}$.}
+            \pause
+            \item \textcolor<5>{dukeroyal}{The versatility offered by the probabilistic framework is highlighted by solving a 3D problem based on physical experiments.}
+        \end{itemize}
+    \end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{}
+\contenttitle{The contact split}\\
+The elastic energy takes into account the tension-compression asymmetry and the frictionless contact condition at the vicinity of the crack set:
+\begin{subequations}
+\begin{align}
+    \pi_\elastic &= g_{qq}(d; p) \pi_\elastic^\activeenergy + \pi_\elastic^\inactiveenergy, \\
+    \pi_\elastic^\activeenergy &=
+    \begin{cases}
+        \dfrac{1}{2} \lambda_s \macaulay{\tr(\strain)}_+^2 + \mu_s \strain^+ : \strain^+, \quad d \leqslant d_\critical, \\
+        \dfrac{1}{2} ( \stress_n^+ + \stress_t ) : \strain, \quad d > d_\critical,
+    \end{cases} \\
+    \pi_\elastic^\inactiveenergy &=
+    \begin{cases}
+        \dfrac{1}{2} \lambda_s \macaulay{\tr(\strain)}_-^2 + \mu_s \strain^- : \strain^-, \quad d \leqslant d_\critical, \\
+        \dfrac{1}{2} \stress_n^- : \strain, \quad d > d_\critical,
+    \end{cases}
+\end{align}
+\end{subequations}
+\end{frame}
+
+\begin{frame}{}
+\begin{columns}
+    \begin{column}{0.7\textwidth}
+        \vspace{-2em}
+        \input{past/figures/mode2_crack_path}
+    \end{column}
+    \begin{column}{0.3\textwidth}
+        The crack paths obtained using \\
+        (1st row) the spectral decomposition on a geometrically notched plate, \\
+        (2nd row) the spectral decomposition with an initial damage field, \\
+        (3rd row) the contact split with an initial damage field. \\
+        \bigskip
+        Snapshots of crack paths are shown at \\
+        (2nd column) $u_x = \SI{0}{\milli\meter}$, \\
+        (3rd column) $u_x = \SI{0.0109}{\milli\meter}$, \\
+        (4th column) $u_x = \SI{0.02}{\milli\meter}$.
+    \end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{}
+\contenttitle{Material inhomogeneity} \\
+The covariance function $\tau \mapsto \cor(\tau)$ for a $[0, L]^n$ $p$-periodic domain is given by
+\begin{align}
+    \cor(\tau) =
+    \begin{bmatrix}
+        \cor_1(\tau) & \rho \cor_1(\tau) \\
+        \rho \cor_1(\tau) & \rho^2 \cor_1(\tau) + (1-\rho^2) \cor_2(\tau)
+    \end{bmatrix}, \quad \forall \tau \in [0,p], \rho \in [-1, 1],
+\end{align}
+where the univariate covariance function $\cor$ is assumed to take the generic form
+\begin{align}
+    \cor_\phi(\tau; L) & = \exp\left( -c \phi(\tau; L)\right )~, \quad \forall \tau \in [0,p]~.
+\end{align} \\
+$\phi$ is a $p$-periodic function taken as
+\begin{align}
+    \phi(\tau; L) =
+    \begin{cases}
+        \dfrac{|\sin\left( \pi\tau/p \right)|}{L}, \quad \text{(Periodic Exponential, PE),} \\
+        \dfrac{\sin\left( \pi\tau/p \right)^2}{L^2}, \quad \text{(Periodic Squared-Exponential, PSE)}.
+    \end{cases}
+\end{align}
+\end{frame}
+
+\begin{frame}{}
+\begin{columns}
+    \begin{column}{0.7\textwidth}
+        \contenttitle{Sensitivity to the correlation length $L$} \\
+        \input{past/figures/compare_correlation_length}
+    \end{column}
+    \begin{column}{0.3\textwidth}
+        \vspace{-2em}
+        \input{past/figures/statistics_correlation_length}
+    \end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{}
+\begin{columns}
+    \begin{column}{0.7\textwidth}
+        \contenttitle{Sensitivity to $\Gc$ and $\pi_c$} \\
+        \input{past/figures/compare_morphology}
+    \end{column}
+    \begin{column}{0.3\textwidth}
+        \vspace{-2em}
+        \input{past/figures/statistics_morphology}
+    \end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{}
+\begin{columns}
+    \begin{column}{0.5\textwidth}
+        \contenttitle{Flexibility of the stochastic model} \\
+        \input{past/figures/japanese_experiment}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+        \input{past/figures/mining_waste}
+    \end{column}
+\end{columns}
+\end{frame}

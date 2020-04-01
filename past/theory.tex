@@ -1,0 +1,139 @@
+\subsection{Theory}
+
+\subsectioncover
+
+\begin{frame}{}
+\begin{figure}[htb!]
+    \centering
+    \begin{overpic}[scale=0.35]{past/figures/motion.png}
+        \put(41,21){$\bs{\phi}(\bs{X}, t)$}
+        \put(0,30){$\body$}
+    \end{overpic}
+\end{figure}
+
+\begin{columns}
+    \begin{column}{0.33\textwidth}
+        \contenttitle{Kinematics} \\
+        $\bs{X}$: material point  \\
+        $\bs{x}$: spatial point \\
+        $\body$: reference configuration \\
+        $\bodyboundary$: external boundary \\
+        $\crackset$: permanent crack set \\
+        $\bs{\phi}(\bs{X}, t)$: deformation map \\
+        $\defgrad = \partial \bs{x}/\partial \bs{X}$: deformation gradient \\
+        $J = \det(\defgrad)$ jacobian
+    \end{column}
+    \begin{column}{0.33\textwidth}
+        \contenttitle{Observable quantities} \\
+        $T$: temperature \\
+        $\defgrad$ deformation gradient \\
+        \bigskip
+        \contenttitle{Internal variables} \\
+        $\defgrad^p$: plastic deformation gradient \\
+        $\plasticstrain$: effective uniaxial plastic strain \\
+        $d$, $\grad d$: phase-field
+    \end{column}
+    \begin{column}{0.33\textwidth}
+        \contenttitle{State} \\
+        $\mathcal{S} = \{ T, \defgrad \}$ \\
+        $\mathcal{X} = \{ \defgrad^p, \plasticstrain, d, \grad d \}$ \\
+        $\pi = \rho_0 \psi$: Helmholtz free energy
+    \end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{}
+\contenttitle{Balance laws} \\
+Mass balance (no mass transport):
+\begin{align}
+    J\rho = \rho_0
+\end{align} \\
+Linear momentum balance:
+\begin{align}
+    \divergence \bs{P} + \rho_0 \bs{b} = \bs{0}
+\end{align} \\
+Angular momentum balance:
+\begin{align}
+    \bs{P} \defgrad^T = \defgrad \bs{P}^T
+\end{align} \\
+Eenergy balance (1st law, adiabatic):
+\begin{align}
+    \bs{P} : \dot{\defgrad} + \rho_0 r = \dot{\pi} + \rho_0 T \dot{s} + \rho_0 \dot{T} s \\
+    \rho_0 c \dot{T} = \rho_0 r - \pi_{, \plasticstrain}\dot{\plasticstrain} - \pi_{, d} \dot{d}
+\end{align} \\
+Entropy production (2nd law, or Clausius-Duhem inequality):
+\begin{align}
+    -\dot{\pi} - \rho_0 s \dot{T} + \bs{P} : \dot{\defgrad} \geqslant 0
+\end{align}
+\end{frame}
+
+\begin{frame}{}
+\contenttitle{Constitutive constraints} \\
+The specific entropy:
+\begin{align}
+    s = -\psi_{, T}
+\end{align} \\
+The first Piola-Kirchhoff stress:
+\begin{align}
+    \bs{P} = \pi_{, \defgrad}
+\end{align} \\
+The dissipation inequality:
+\begin{align}
+    - \pi_{, \defgrad^p} : \dot{\defgrad^p} - \pi_{, \plasticstrain}\dot{\plasticstrain} - \pi_{, d} \dot{d} - \pi_{, \grad d} \cdot \grad \dot{d} \geqslant 0,
+\end{align}
+which, by the principal of maximum dissipation, gives me the equations of flow rule, yield surface and fracture evolution.
+\end{frame}
+
+\begin{frame}{}
+In the soil desiccation problem, the free energy is written as
+\begin{align}
+    \pi = \pi_\elastic + \pi_\inelastic + \pi_\interface + \pi_\fracture.
+\end{align}
+
+In the UO$_2$ fracture problem, the free energy is written as
+\begin{align}
+    \pi =
+    \begin{cases}
+        \pi_\elastic^\text{bnd} + \pi_\fracture^\text{bnd}, \quad \forall \bs{X} \in \body^\text{bnd}, \\
+        \pi_\elastic^\text{grain} + \pi_\fracture^\text{grain}, \quad \forall \bs{X} \in \body^\text{grain}.
+    \end{cases}
+\end{align}
+
+In the ductile fracture model, the free energy takes the following form:
+\begin{align}
+    \pi = \pi_\elastic + \pi_\plastic + \pi_\fracture.
+\end{align}
+
+The free energy $\pi$ is polyconvex and coercive. We adopt an alternating minimization technique to address stability issues (see e.g. \cite{hong2017linear} for a convergence proof).
+\end{frame}
+
+\begin{frame}{}
+Variational phase-field models (as a subclass of the gradient-damage models) rely on a relatively unified description of the fracture energy:
+\begin{align}
+    \pi_\fracture &= \Gc \gamma(d; l), \\
+    \gamma(d; l) &= \dfrac{1}{c_0 l} \left[ w(d) + 2l^2 \grad d \cdot \grad d \right],
+\end{align}
+where $c_0$ is a normalization constant such that $\lim_{l \searrow 0} \gamma(d; l) = \delta(\crackset)$. \\
+\bigskip
+\begin{columns}
+    \begin{column}{0.5\textwidth}
+        \begin{block}{\textbf{Cohesive fracture}}
+        \vspace{-1em}
+        \begin{align*}
+            w_1(d) &= d, \\
+            g_{ql}(d) &= \dfrac{1 - d}{(1 - d) + m d}, \quad m = \dfrac{\Gc}{\pi_c} \dfrac{1}{c_0 l}, \\
+            g_{qq}(d; p) &= \dfrac{(1 - d)^2}{(1 - d)^2 + m d (1 + p d)}, \quad m = \dfrac{\Gc}{\pi_c} \dfrac{1}{c_0 l} \geqslant p + 2.
+        \end{align*}
+        \end{block}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+        \begin{block}{\textbf{Brittle fracture}}
+        \vspace{-1em}
+        \begin{align*}
+            w_2(d) &= d^2, \\
+            g_q(d) &= (1 - d)^2.
+        \end{align*}
+        \end{block}
+    \end{column}
+\end{columns}
+\end{frame}

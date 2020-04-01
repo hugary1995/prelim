@@ -1,0 +1,78 @@
+% !TEX root = ../../../main.tex
+
+\begin{figure}[htb!]
+    \centering
+    \begin{subfigure}[b]{\textwidth}
+        \centering
+        \begin{tikzpicture}
+            \begin{axis}[
+                width=\textwidth,
+                height=0.7\textwidth,
+                ticks=none,
+                ymode=log,
+                log ticks with fixed point,
+                ylabel=$\underline{l^*}$,xlabel=$\mathcal{D}^*$,
+                % ymin=0,ymax=2.5
+            ]
+                \addplot [select coords between index={40}{220},color=black] table [x expr=\thisrowno{0},y expr=\thisrowno{1}]{past/data/dimensionless_curve_sqexp_cartesian_5_5.csv};
+                \addplot [select coords between index={40}{220},color=red] table [x expr=\thisrowno{0},y expr=\thisrowno{1}]{past/data/dimensionless_curve_sqexp_cartesian_10_10.csv};
+                \addplot [select coords between index={40}{220},color=blue] table [x expr=\thisrowno{0},y expr=\thisrowno{1}]{past/data/dimensionless_curve_sqexp_cartesian_20_20.csv};
+            \end{axis}
+        \end{tikzpicture}
+    \end{subfigure}
+
+    \begin{subfigure}[b]{\textwidth}
+        \centering
+        \begin{tikzpicture}
+            \begin{axis}[
+                width=\textwidth,
+                height=0.7\textwidth,
+                ticks=none,
+                xlabel=$l^*$,ylabel=PDF,
+                ymin=0,ymax=0.012,
+                xmin=0,xmax=1000
+            ]
+                \addplot [color=black] table [x expr=\thisrowno{0},y expr=\thisrowno{1}]{past/data/distribution_sqexp_cartesian_5_5.csv};
+                \addplot [color=red] table [x expr=\thisrowno{0},y expr=\thisrowno{1}]{past/data/distribution_sqexp_cartesian_10_10.csv};
+                \addplot [color=blue] table [x expr=\thisrowno{0},y expr=\thisrowno{1}]{past/data/distribution_sqexp_cartesian_20_20.csv};
+            \end{axis}
+        \end{tikzpicture}
+    \end{subfigure}
+
+    \begin{subfigure}[b]{\textwidth}
+        \centering
+        \begin{tikzpicture}
+            \begin{axis}[
+                width=\textwidth,
+                height=0.7\textwidth,
+                ticks=none,
+                ymode=log,
+                log ticks with fixed point,
+                ylabel=$\underline{l^*}$,xlabel=$\mathcal{D}^*$,
+                % ymin=0,ymax=2.5
+            ]
+                \addplot [select coords between index={40}{220},color=black] table [x expr=\thisrowno{0},y expr=\thisrowno{1}]{past/data/dimensionless_curve_exp_cartesian_5_5.csv};
+                \addplot [select coords between index={40}{220},color=red] table [x expr=\thisrowno{0},y expr=\thisrowno{1}]{past/data/dimensionless_curve_exp_cartesian_10_10.csv};
+                \addplot [select coords between index={40}{220},color=blue] table [x expr=\thisrowno{0},y expr=\thisrowno{1}]{past/data/dimensionless_curve_exp_cartesian_20_20.csv};
+            \end{axis}
+        \end{tikzpicture}
+    \end{subfigure}
+
+    \begin{subfigure}[b]{\textwidth}
+        \centering
+        \begin{tikzpicture}
+            \begin{axis}[
+                width=\textwidth,
+                height=0.7\textwidth,
+                ticks=none,
+                xlabel=$l^*$,ylabel=PDF,
+                ymin=0,ymax=0.012,
+                xmin=0,xmax=300
+            ]
+                \addplot [color=black] table [x expr=\thisrowno{0},y expr=\thisrowno{1}]{past/data/distribution_exp_cartesian_5_5.csv};
+                \addplot [color=red] table [x expr=\thisrowno{0},y expr=\thisrowno{1}]{past/data/distribution_exp_cartesian_10_10.csv};
+                \addplot [color=blue] table [x expr=\thisrowno{0},y expr=\thisrowno{1}]{past/data/distribution_exp_cartesian_20_20.csv};
+            \end{axis}
+        \end{tikzpicture}
+    \end{subfigure}
+\end{figure}

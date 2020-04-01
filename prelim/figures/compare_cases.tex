@@ -1,0 +1,98 @@
+\begin{figure}[htb!]
+    \centering
+    \begin{subfigure}{0.24\textwidth}
+        \centering
+        \begin{tikzpicture}
+            \begin{axis}[
+                width=1.2\textwidth,
+                height=1.5\textwidth,
+                ticks=none,
+                xmin=0,
+                ymin=0,
+                ymax=1.4,
+                title=E-D,
+                xlabel=$\varepsilon$,
+                legend style={at={(0.05,0.95)},anchor=north west},
+                legend style={nodes={scale=0.5, transform shape}},
+                legend cell align={left},
+                every axis plot/.append style={}
+            ]
+                \addplot +[mark=none, blue] table[x expr=\thisrowno{3},y expr=\thisrowno{2}/298.29153444049]{prelim/data/E_D.tex};
+                \addplot +[mark=none, red] table[x expr=\thisrowno{3},y expr=\thisrowno{0}/0.42019062578981]{prelim/data/E_D.tex};
+                \legend{$\underline{\sigma}$,$\underline{d}$}
+            \end{axis}
+        \end{tikzpicture}
+    \end{subfigure}
+    \begin{subfigure}{0.24\textwidth}
+        \centering
+        \begin{tikzpicture}
+            \begin{axis}[
+                width=1.2\textwidth,
+                height=1.5\textwidth,
+                ticks=none,
+                xmin=0,
+                ymin=0,
+                ymax=1.4,
+                title=E-D-PD,
+                xlabel=$\varepsilon$,
+                legend style={at={(0.05,0.95)},anchor=north west},
+                legend style={nodes={scale=0.5, transform shape}},
+                legend cell align={left},
+                every axis plot/.append style={}
+            ]
+                \addplot +[mark=none, blue] table[x expr=\thisrowno{3},y expr=\thisrowno{2}/298.29153444049]{prelim/data/E_D_PD.tex};
+                \addplot +[mark=none, red] table[x expr=\thisrowno{3},y expr=\thisrowno{0}/0.16479881435696]{prelim/data/E_D_PD.tex};
+                \addplot +[mark=none, black] table[x expr=\thisrowno{3},y expr=\thisrowno{1}/0.029523551562498]{prelim/data/E_D_PD.tex};
+                \legend{$\underline{\sigma}$,$\underline{d}$,$\plasticstrain$}
+            \end{axis}
+        \end{tikzpicture}
+    \end{subfigure}
+    \begin{subfigure}{0.24\textwidth}
+        \centering
+        \begin{tikzpicture}
+            \begin{axis}[
+                width=1.2\textwidth,
+                height=1.5\textwidth,
+                ticks=none,
+                xmin=0,
+                ymin=0,
+                ymax=1.4,
+                title=E-P-PD,
+                xlabel=$\varepsilon$,
+                legend style={at={(0.05,0.95)},anchor=north west},
+                legend style={nodes={scale=0.5, transform shape}},
+                legend cell align={left},
+                every axis plot/.append style={}
+            ]
+                \addplot +[mark=none, blue] table[x expr=\thisrowno{3},y expr=\thisrowno{2}/321.01236793956]{prelim/data/E_P_PD.tex};
+                \addplot +[mark=none, red] table[x expr=\thisrowno{3},y expr=\thisrowno{0}/0.33249088266593]{prelim/data/E_P_PD.tex};
+                \addplot +[mark=none, black] table[x expr=\thisrowno{3},y expr=\thisrowno{1}/0.029523551562499]{prelim/data/E_P_PD.tex};
+                \legend{$\underline{\sigma}$,$\underline{d}$,$\plasticstrain$}
+            \end{axis}
+        \end{tikzpicture}
+    \end{subfigure}
+    \begin{subfigure}{0.24\textwidth}
+        \centering
+        \begin{tikzpicture}
+            \begin{axis}[
+                width=1.2\textwidth,
+                height=1.5\textwidth,
+                ticks=none,
+                xmin=0,
+                ymin=0,
+                ymax=1.4,
+                title=E-P-D,
+                xlabel=$\varepsilon$,
+                legend style={at={(0.05,0.95)},anchor=north west},
+                legend style={nodes={scale=0.5, transform shape}},
+                legend cell align={left},
+                every axis plot/.append style={}
+            ]
+                \addplot +[mark=none, blue] table[x expr=\thisrowno{3},y expr=\thisrowno{2}/321.01236793956]{prelim/data/E_P_D.tex};
+                \addplot +[mark=none, red] table[x expr=\thisrowno{3},y expr=\thisrowno{0}/0.26306685453726]{prelim/data/E_P_D.tex};
+                \addplot +[mark=none, black] table[x expr=\thisrowno{3},y expr=\thisrowno{1}/0.0171]{prelim/data/E_P_D.tex};
+                \legend{$\underline{\sigma}$,$\underline{d}$,$\plasticstrain$}
+            \end{axis}
+        \end{tikzpicture}
+    \end{subfigure}
+\end{figure}

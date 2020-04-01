@@ -1,0 +1,3 @@
+tikz/main-figure10.pdf: past/data/b100_y.csv
+tikz/main-figure10.pdf: past/data/b100_yz.csv
+tikz/main-figure10.pdf: past/data/b100_xyz.csv

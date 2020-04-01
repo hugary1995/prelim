@@ -1,0 +1,55 @@
+\begin{figure}[htb!]
+    \centering
+    \begin{subfigure}{0.48\textwidth}
+        \centering
+        \begin{tikzpicture}
+            \begin{axis}[
+                cycle list name=color list,
+                width=\textwidth,
+                height=0.8\textwidth,
+                xmin=0,
+                ymin=0,
+                ymax=600,
+                xlabel=$\varepsilon$,ylabel=$\sigma$,
+                legend style={at={(0.05,0.95)},anchor=north west},
+                legend style={nodes={scale=0.6, transform shape}},
+                legend cell align={left},
+                every axis plot/.append style={thick}
+            ]
+                \addplot +[mark=none] table[x expr=\thisrowno{1},y expr=\thisrowno{0}]{prelim/data/elastic_plastic_quasi_brittle_fracture_l_1000.tex};
+                \addplot +[mark=none] table[x expr=\thisrowno{1},y expr=\thisrowno{0}]{prelim/data/elastic_plastic_quasi_brittle_fracture_l_1500.tex};
+                \addplot +[mark=none] table[x expr=\thisrowno{1},y expr=\thisrowno{0}]{prelim/data/elastic_plastic_quasi_brittle_fracture_l_2000.tex};
+                \addplot +[mark=none] table[x expr=\thisrowno{1},y expr=\thisrowno{0}]{prelim/data/elastic_plastic_quasi_brittle_fracture_l_2500.tex};
+                \addplot +[mark=none] table[x expr=\thisrowno{1},y expr=\thisrowno{0}]{prelim/data/elastic_plastic_quasi_brittle_fracture_l_3000.tex};
+                \legend{$l=1.0$,$l=1.5$,$l=2.0$,$l=2.5$,$l=3.0$}
+            \end{axis}
+        \end{tikzpicture}
+        \caption{}
+    \end{subfigure}
+    \begin{subfigure}{0.48\textwidth}
+        \centering
+        \begin{tikzpicture}
+            \begin{axis}[
+                cycle list name=exotic,
+                width=\textwidth,
+                height=0.8\textwidth,
+                xmin=0,
+                ymin=0,
+                ymax=600,
+                xlabel=$\varepsilon$,ylabel=$\sigma$,
+                legend style={at={(0.95,0.95)},anchor=north east},
+                legend style={nodes={scale=0.6, transform shape}},
+                legend cell align={left},
+                every axis plot/.append style={thick}
+            ]
+                \addplot +[mark=none] table[x expr=\thisrowno{1},y expr=\thisrowno{0}]{prelim/data/elastic_plastic_cohesive_fracture_l_1000_p_16.6.csv};
+                \addplot +[mark=none] table[x expr=\thisrowno{1},y expr=\thisrowno{0}]{prelim/data/elastic_plastic_cohesive_fracture_l_1500_p_8.5.csv};
+                \addplot +[mark=none] table[x expr=\thisrowno{1},y expr=\thisrowno{0}]{prelim/data/elastic_plastic_cohesive_fracture_l_2000_p_4.6.csv};
+                \addplot +[mark=none] table[x expr=\thisrowno{1},y expr=\thisrowno{0}]{prelim/data/elastic_plastic_cohesive_fracture_l_2500_p_2.35.csv};
+                \addplot +[mark=none] table[x expr=\thisrowno{1},y expr=\thisrowno{0}]{prelim/data/elastic_plastic_cohesive_fracture_l_3000_p_1.csv};
+                \legend{$l=1.0 \quad p=16.6$,$l=1.5 \quad p=8.50$,$l=2.0 \quad p=4.60$,$l=2.5 \quad p=2.35$,$l=3.0 \quad p=1.00$}
+            \end{axis}
+        \end{tikzpicture}
+        \caption{}
+    \end{subfigure}
+\end{figure}

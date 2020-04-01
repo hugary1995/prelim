@@ -1,0 +1,68 @@
+\begin{figure}[htb!]
+    \centering
+    \begin{subfigure}{0.47\textwidth}
+        \centering
+        \begin{tikzpicture}
+            \centering
+            \begin{axis}[
+                cycle list name=color list,
+                width=\textwidth,
+                height=\textwidth,
+                xmin=0,
+                ymin=0,
+                xlabel=$\varepsilon$,ylabel=$\plasticstrain/d$,
+                yticklabel style={/pgf/number format/fixed},
+                legend style={at={(0.05,0.95)},anchor=north west},
+                legend style={nodes={scale=0.5, transform shape}},
+                legend cell align={left},
+                every axis plot/.append style={}
+            ]
+                \addplot +[mark=none] table[x expr=\thisrowno{3},y expr=\thisrowno{1}/\thisrowno{0}]{prelim/data/E_D_PD_pe_1_pp_16.csv};
+                \addplot +[mark=none] table[x expr=\thisrowno{3},y expr=\thisrowno{1}/\thisrowno{0}]{prelim/data/E_D_PD_pe_1_pp_8.csv};
+                \addplot +[mark=none] table[x expr=\thisrowno{3},y expr=\thisrowno{1}/\thisrowno{0}]{prelim/data/E_D_PD_pe_1_pp_4.csv};
+                \addplot +[mark=none] table[x expr=\thisrowno{3},y expr=\thisrowno{1}/\thisrowno{0}]{prelim/data/E_D_PD_pe_1_pp_2.csv};
+                \addplot +[mark=none] table[x expr=\thisrowno{3},y expr=\thisrowno{1}/\thisrowno{0}]{prelim/data/E_D_PD_pe_1_pp_1.csv};
+                \addplot +[mark=none] table[x expr=\thisrowno{3},y expr=\thisrowno{1}/\thisrowno{0}]{prelim/data/E_D_PD_pe_2_pp_1.csv};
+                \addplot +[mark=none] table[x expr=\thisrowno{3},y expr=\thisrowno{1}/\thisrowno{0}]{prelim/data/E_D_PD_pe_4_pp_1.csv};
+                \addplot +[mark=none] table[x expr=\thisrowno{3},y expr=\thisrowno{1}/\thisrowno{0}]{prelim/data/E_D_PD_pe_8_pp_1.csv};
+                \addplot +[mark=none] table[x expr=\thisrowno{3},y expr=\thisrowno{1}/\thisrowno{0}]{prelim/data/E_D_PD_pe_16_pp_1.csv};
+                \legend{$p^e/p^p=2^{-4}$,$p^e/p^p=2^{-3}$,$p^e/p^p=2^{-2}$,$p^e/p^p=2^{-1}$,$p^e/p^p=2^0$,$p^e/p^p=2^1$,$p^e/p^p=2^2$,$p^e/p^p=2^3$,$p^e/p^p=2^4$}
+            \end{axis}
+        \end{tikzpicture}
+    \end{subfigure}
+    \hspace{0.01\textwidth}
+    \begin{subfigure}{0.47\textwidth}
+        \centering
+        \begin{tikzpicture}
+            \begin{axis}[
+                at={(0,0.5\textwidth)},
+                width=\textwidth,
+                height=0.5\textwidth,
+                xmin=0,
+                ymin=0,
+                xlabel=$\varepsilon$,ylabel=$\sigma$,
+                legend style={at={(0.95,0.95)},anchor=north east},
+                legend style={nodes={scale=0.5, transform shape}},
+                legend cell align={left},
+                every axis plot/.append style={}
+            ]
+                \addplot +[mark=none, black] table[x expr=\thisrowno{3},y expr=\thisrowno{2}]{prelim/data/E_D_PD_pe_1_pp_16_LU.csv};
+                \legend{$p^e/p^p = 2^{-4}$};
+            \end{axis}
+            \begin{axis}[
+                width=\textwidth,
+                height=0.5\textwidth,
+                xmin=0,
+                ymin=0,
+                xlabel=$\varepsilon$,ylabel=$\sigma$,
+                legend style={at={(0.95,0.95)},anchor=north east},
+                legend style={nodes={scale=0.5, transform shape}},
+                legend cell align={left},
+                every axis plot/.append style={}
+            ]
+                \addplot +[mark=none, black] table[x expr=\thisrowno{3},y expr=\thisrowno{2}]{prelim/data/E_D_PD_pe_16_pp_1_LU.csv};
+                \legend{$p^e/p^p = 2^4$};
+            \end{axis}
+        \end{tikzpicture}
+    \end{subfigure}
+\end{figure}

@@ -1,0 +1,61 @@
+\subsection{Intergranular Fracture in \texorpdfstring{UO$_2$}{UO2}}
+
+\subsectioncover
+
+\begin{frame}{}
+\vspace{-1.5em}
+\begin{columns}
+    \begin{column}{0.3\textwidth}
+        \begin{figure}[htb!]
+            \centering
+            \begin{subfigure}{\textwidth}
+                \centering
+                \includegraphics[width=0.5\textwidth]{past/figures/b50_ini_new.png}
+            \end{subfigure}
+
+            \begin{subfigure}{\textwidth}
+                \centering
+                \includegraphics[width=0.5\textwidth]{past/figures/b100_ini_new.png}
+            \end{subfigure}
+
+            \begin{subfigure}{\textwidth}
+                \centering
+                \includegraphics[width=0.5\textwidth]{past/figures/b150_ini_new.png}
+            \end{subfigure}
+        \end{figure}
+    \end{column}
+    \begin{column}{0.7\textwidth}
+        \begin{itemize}
+            \item A set of random close-packing (RCP) voronoi structures are realized by Maximal Poisson-disk Sampling (MPS).
+            \item The polycrystalline microstructure is described by a set of non-conserved order variables $\{\phi_i\}$ in a diffuse manner.
+            \item The microstructure follows from a phase-field grain growth model \cite{Moelans2008}.
+            \item The grain boundaries are identified by $\sum_i \phi_i^2 \geqslant 0.75$.
+            \item Gas bubbles are represented by another phase variable $\phi_0$ and are uniformly distributed along grain boundaries, overriding existing order variables. The effect of gas pressure inside bubbles is neglected.
+            \pause
+            \item A phase-field brittle fracture model is used.
+            \item Grain boundaries have an arbitrarily high fracture toughness to facilitate intergranular fracture, i.e. $\Gc^\text{bnd} \gg \Gc^\text{grain}$.
+            \pause
+            \item \textcolor<4>{dukeroyal}{Numerical studies are performed to investigate the effect of bubble geometry, porosity and loading conditions on the fracture strength.}
+        \end{itemize}
+    \end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{}
+\begin{columns}
+    \begin{column}{0.33\textwidth}
+        \contenttitle{Effect of bubble geometry} \\
+        \input{past/figures/compare_bubble_geometry}
+    \end{column}
+    \vrule{}
+    \begin{column}{0.33\textwidth}
+        \contenttitle{Effect of porosity} \\
+        \input{past/figures/compare_porosity}
+    \end{column}
+    \vrule{}
+    \begin{column}{0.33\textwidth}
+        \contenttitle{Effect of loading direction} \\
+        \input{past/figures/compare_loading_condition}
+    \end{column}
+\end{columns}
+\end{frame}

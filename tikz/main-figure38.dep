@@ -1,0 +1,3 @@
+tikz/main-figure38.pdf: past/data/distribution_sqexp_cartesian_5_5.csv
+tikz/main-figure38.pdf: past/data/distribution_sqexp_cartesian_10_10.csv
+tikz/main-figure38.pdf: past/data/distribution_sqexp_cartesian_20_20.csv

@@ -1,0 +1,5 @@
+tikz/main-figure90.pdf: prelim/data/elastic_plastic_cohesive_fracture_l_1000_p_16.6.csv
+tikz/main-figure90.pdf: prelim/data/elastic_plastic_cohesive_fracture_l_1500_p_8.5.csv
+tikz/main-figure90.pdf: prelim/data/elastic_plastic_cohesive_fracture_l_2000_p_4.6.csv
+tikz/main-figure90.pdf: prelim/data/elastic_plastic_cohesive_fracture_l_2500_p_2.35.csv
+tikz/main-figure90.pdf: prelim/data/elastic_plastic_cohesive_fracture_l_3000_p_1.csv

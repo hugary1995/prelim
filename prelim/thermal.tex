@@ -1,0 +1,53 @@
+\subsection{Incorporating thermal effects}
+
+\subsectioncover
+
+\begin{frame}{}
+\contenttitle{Neumann-type boundary conditions} can be defined based on an approximated crack surface normal:
+\begin{align}
+    \int\limits_\bodyboundary \bs{t} \dArea \approx \int\limits_{\body_t} \bs{t} \norm{\grad_{\bs{x}} d} \dVolume = \int\limits_{\body_0} \bs{T} \norm{\grad d} \dVolume,
+\end{align}
+where $\bs{t}$ is some surface flux and $\bs{T} = \defgrad^{-1} \cdot \bs{t}$ is its material form. \\
+\bigskip
+$\Gamma$-convergence of this approximation has been sketched in \cite{chukwudozie2019variational}. \\
+\bigskip
+A numerical investigation of the $\Gamma$-convergence can be found in \cite{nguyen2017phase} in the context of finite cell method. \\
+\bigskip
+\cite{miehe2015phase} provides a similar approximation based on finite-differencing arguments. \\
+\bigskip
+Many studies on pressurized crack and hydraulic fracture have used a special case of the approximation where $\bs{t} = p_0\xnormal$ with $p_0$ being a scalar-valued pressure field.
+\end{frame}
+
+\begin{frame}{}
+\contenttitle{A better approximation of the crack surface normal} \\
+The closed-form solution to the phase-field in 1D, depending on the specific choice of the local fracture dissipation function, is
+\begin{align}
+    d(\tau; l) =
+    \begin{cases}
+        \left( 1 - \dfrac{\tau}{2l} \right)^2, \quad w(d) = w_l(d), \\
+        1-\exp(-\tau/l), \quad w(d) = w_q(d),
+    \end{cases}
+\end{align} \\
+\bigskip
+A Cahn-Hilliard approximation to the crack surface density takes the form
+\begin{align}
+    \gamma_4(d; l) = \dfrac{1}{c_0 l} \left[ w(d) + 2 l^2 \grad d \cdot \grad d + l^4 (\Delta d)^2 \right],
+\end{align}
+and a $C^\infty$ closed-form solution exists when $w(d) = w_q(d)$, i.e.
+\begin{align}
+    d(\tau; l) = \exp(-\tau/l) \left( 1 + \dfrac{\tau}{l} \right),
+\end{align}
+and the approximation of the crack surface normal will be smooth almost everywhere.
+\end{frame}
+
+\begin{frame}{}
+\contenttitle{Thermal effects} \\
+Disregarding the adiabatic assumption and taking into account the aforementioned approximation to heat flux, the modified heat equation can be written as
+\begin{align}
+    g(d) \rho_0 c \dot{T} = g(d) \rho_0 r - g(d) \divergence \kappa \grad T - \dfrac{\partial \pi}{\partial \plasticstrain}\dot{\plasticstrain} - \dfrac{\partial \pi}{\partial d} \dot{d},
+\end{align}\\
+\bigskip
+Thermal-elastic coupling can be introduced by an inelastic potential $r(T;T_0,\alpha) \tr(\strain)$ where $T_0$ is the reference temperature and $\alpha$ is the thermal expansion coefficient. \\
+\bigskip
+Heat generation due to plasticity has been considered in the heat equation. Thermal softening in the plastic regime can be defined by the degradation of hardening modulus as a function of temperature $h = \widetilde{h}(T)$.
+\end{frame}

@@ -1,0 +1,3 @@
+tikz/main-figure8.pdf: past/data/single_case1.csv
+tikz/main-figure8.pdf: past/data/single_case2.csv
+tikz/main-figure8.pdf: past/data/single_case3.csv

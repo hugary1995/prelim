@@ -1,0 +1,5 @@
+tikz/main-figure89.pdf: prelim/data/elastic_plastic_quasi_brittle_fracture_l_1000.tex
+tikz/main-figure89.pdf: prelim/data/elastic_plastic_quasi_brittle_fracture_l_1500.tex
+tikz/main-figure89.pdf: prelim/data/elastic_plastic_quasi_brittle_fracture_l_2000.tex
+tikz/main-figure89.pdf: prelim/data/elastic_plastic_quasi_brittle_fracture_l_2500.tex
+tikz/main-figure89.pdf: prelim/data/elastic_plastic_quasi_brittle_fracture_l_3000.tex
