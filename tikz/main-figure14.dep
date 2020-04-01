@@ -1,5 +1,5 @@
-tikz/main-figure14.pdf: prelim/data/elastic_plastic.tex
 tikz/main-figure14.pdf: prelim/data/elastic_plastic_quasi_brittle_fracture_W0_5.tex
 tikz/main-figure14.pdf: prelim/data/elastic_plastic_quasi_brittle_fracture_W0_10.tex
 tikz/main-figure14.pdf: prelim/data/elastic_plastic_quasi_brittle_fracture_W0_20.tex
 tikz/main-figure14.pdf: prelim/data/elastic_plastic_quasi_brittle_fracture_W0_40.tex
+tikz/main-figure14.pdf: prelim/data/elastic_plastic.tex

@@ -16,12 +16,12 @@
                 legend cell align={left},
                 every axis plot/.append style={thick}
             ]
-                \addplot +[mark=none] table[x expr=\thisrowno{1},y expr=\thisrowno{0}]{prelim/data/elastic_plastic.tex};
                 \addplot +[mark=none] table[x expr=\thisrowno{1},y expr=\thisrowno{0}]{prelim/data/elastic_plastic_brittle_fracture_W0_5.tex};
                 \addplot +[mark=none] table[x expr=\thisrowno{1},y expr=\thisrowno{0}]{prelim/data/elastic_plastic_brittle_fracture_W0_10.tex};
                 \addplot +[mark=none] table[x expr=\thisrowno{1},y expr=\thisrowno{0}]{prelim/data/elastic_plastic_brittle_fracture_W0_20.tex};
                 \addplot +[mark=none] table[x expr=\thisrowno{1},y expr=\thisrowno{0}]{prelim/data/elastic_plastic_brittle_fracture_W0_40.tex};
-                \legend{no fracture, $\pi_c = 5$, $\pi_c = 10$, $\pi_c = 20$, $\pi_c = 40$}
+                \addplot +[mark=none, dashed] table[x expr=\thisrowno{1},y expr=\thisrowno{0}]{prelim/data/elastic_plastic.tex};
+                \legend{$\pi_c = 5$, $\pi_c = 10$, $\pi_c = 20$, $\pi_c = 40$, no fracture}
             \end{axis}
         \end{tikzpicture}
         \caption{}
@@ -42,12 +42,12 @@
                 legend cell align={left},
                 every axis plot/.append style={thick}
             ]
-                \addplot +[mark=none] table[x expr=\thisrowno{1},y expr=\thisrowno{0}]{prelim/data/elastic_plastic.tex};
                 \addplot +[mark=none] table[x expr=\thisrowno{1},y expr=\thisrowno{0}]{prelim/data/elastic_plastic_quasi_brittle_fracture_W0_5.tex};
                 \addplot +[mark=none] table[x expr=\thisrowno{1},y expr=\thisrowno{0}]{prelim/data/elastic_plastic_quasi_brittle_fracture_W0_10.tex};
                 \addplot +[mark=none] table[x expr=\thisrowno{1},y expr=\thisrowno{0}]{prelim/data/elastic_plastic_quasi_brittle_fracture_W0_20.tex};
                 \addplot +[mark=none] table[x expr=\thisrowno{1},y expr=\thisrowno{0}]{prelim/data/elastic_plastic_quasi_brittle_fracture_W0_40.tex};
-                \legend{no fracture, $\pi_c = 5$, $\pi_c = 10$, $\pi_c = 20$, $\pi_c = 40$}
+                \addplot +[mark=none, dashed] table[x expr=\thisrowno{1},y expr=\thisrowno{0}]{prelim/data/elastic_plastic.tex};
+                \legend{$\pi_c = 5$, $\pi_c = 10$, $\pi_c = 20$, $\pi_c = 40$, no fracture}
             \end{axis}
         \end{tikzpicture}
         \caption{}
