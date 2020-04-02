@@ -9,13 +9,15 @@
 \end{align}
 where $\bs{t}$ is some surface flux and $\bs{T} = \defgrad^{-1} \cdot \bs{t}$ is its material form. \\
 \bigskip
-$\Gamma$-convergence of this approximation has been sketched in \cite{chukwudozie2019variational}. \\
-\bigskip
-A numerical investigation of the $\Gamma$-convergence can be found in \cite{nguyen2017phase} in the context of finite cell method. \\
+$\Gamma$-convergence of this approximation has been sketched in \cite{chukwudozie2019variational}. A numerical investigation of the $\Gamma$-convergence can be found in \cite{nguyen2017phase} in the context of finite cell method. \\
 \bigskip
 \cite{miehe2015phase} provides a similar approximation based on finite-differencing arguments. \\
 \bigskip
-Many studies on pressurized crack and hydraulic fracture have used a special case of the approximation where $\bs{t} = p_0\xnormal$ with $p_0$ being a scalar-valued pressure field.
+Many studies on pressurized crack and hydraulic fracture have used a special case of the approximation where $\bs{t} = p_0\xnormal$ with $p_0$ being a scalar-valued pressure field. \\
+\bigskip
+\begin{exampleblock}{}
+    See \texttt{neumann.pdf} for an example of the approximated Neumann BC.
+\end{exampleblock}
 \end{frame}
 
 \begin{frame}{}
@@ -44,7 +46,7 @@ and the approximation of the crack surface normal will be smooth almost everywhe
 \contenttitle{Thermal effects} \\
 Disregarding the adiabatic assumption and taking into account the aforementioned approximation to heat flux, the modified heat equation can be written as
 \begin{align}
-    g(d) \rho_0 c \dot{T} = g(d) \rho_0 r - g(d) \divergence \kappa \grad T - \dfrac{\partial \pi}{\partial \plasticstrain}\dot{\plasticstrain} - \dfrac{\partial \pi}{\partial d} \dot{d},
+    g(d) \rho_0 c \dot{T} = g(d) \rho_0 r - g(d) \divergence \kappa \grad T - \pi_{, \plasticstrain} \dot{\plasticstrain} - \pi_{, d} \dot{d},
 \end{align}\\
 \bigskip
 Thermal-elastic coupling can be introduced by an inelastic potential $r(T;T_0,\alpha) \tr(\strain)$ where $T_0$ is the reference temperature and $\alpha$ is the thermal expansion coefficient. \\
