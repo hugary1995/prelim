@@ -1,3 +1,2 @@
-tikz/main-figure20.pdf: prelim/data/E_P_D.tex
-tikz/main-figure20.pdf: prelim/data/E_P_D.tex
-tikz/main-figure20.pdf: prelim/data/E_P_D.tex
+tikz/main-figure20.pdf: prelim/data/E_D_PD_pe_1_pp_16_LU.csv
+tikz/main-figure20.pdf: prelim/data/E_D_PD_pe_16_pp_1_LU.csv

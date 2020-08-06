@@ -1,2 +1,2 @@
-tikz/main-figure22.pdf: prelim/data/E_D_PD_pe_1_pp_16_LU.csv
-tikz/main-figure22.pdf: prelim/data/E_D_PD_pe_16_pp_1_LU.csv
+tikz/main-figure22.pdf: prelim/data/E_P_PD_pe_1_pp_8_LU.csv
+tikz/main-figure22.pdf: prelim/data/E_P_PD_pe_8_pp_1_LU.csv
